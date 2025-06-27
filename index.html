@@ -35,10 +35,12 @@
 
     <section class="contact">
       <h2>Contact Me</h2>
-      <form action="https://formspree.io/f/your-form-id" method="POST">
-        <input type="text" name="name" placeholder="Enter your name" required /><br />
-        <input type="email" name="email" placeholder="Enter your email" required /><br />
-        <textarea name="message" rows="4" placeholder="Please enter your message here..." required></textarea><br />
+
+      <!-- ✅ JavaScript-enabled form -->
+      <form onsubmit="showData(event)">
+        <input type="text" id="name" name="name" placeholder="Enter your name" required /><br />
+        <input type="email" id="email" name="email" placeholder="Enter your email" required /><br />
+        <textarea id="message" name="message" rows="4" placeholder="Please enter your message here..." required></textarea><br />
 
         <u><h4>If student:</h4></u>
         <label><input type="radio" name="year" value="1st year" /> 1st year</label>
@@ -46,7 +48,7 @@
         <label><input type="radio" name="year" value="3rd year" /> 3rd year</label>
         <label><input type="radio" name="year" value="4th year" /> 4th year</label><br/>
 
-        <input type="text" name="college" placeholder="Your college name" required />
+        <input type="text" id="college" name="college" placeholder="Your college name" required /><br />
         <label for="feedback">Feedback:</label><br />
         <textarea id="feedback" name="feedback" rows="4" placeholder="Please enter your valuable feedback here..." required></textarea><br />
 
@@ -54,5 +56,34 @@
       </form>
     </section>
   </div>
+
+  <!-- ✅ JavaScript added below -->
+  <script>
+    function showData(event) {
+      event.preventDefault(); // Stop form from submitting
+
+      // Get values
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("message").value;
+      const college = document.getElementById("college").value;
+      const feedback = document.getElementById("feedback").value;
+
+      // Get selected year (radio buttons)
+      const year = document.querySelector('input[name="year"]:checked');
+      const selectedYear = year ? year.value : "Not selected";
+
+      // Show user-entered info
+      alert(
+        `📥 Form Data:\n\n` +
+        `👤 Name: ${name}\n` +
+        `📧 Email: ${email}\n` +
+        `📨 Message: ${message}\n` +
+        `🎓 Year: ${selectedYear}\n` +
+        `🏫 College: ${college}\n` +
+        `🗣️ Feedback: ${feedback}`
+      );
+    }
+  </script>
 </body>
 </html>
