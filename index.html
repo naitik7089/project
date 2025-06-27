@@ -37,23 +37,26 @@
       <h2>Contact Me</h2>
 
       <!-- ✅ JavaScript-enabled form -->
-      <form onsubmit="showData(event)">
-        <input type="text" id="name" name="name" placeholder="Enter your name" required /><br />
-        <input type="email" id="email" name="email" placeholder="Enter your email" required /><br />
-        <textarea id="message" name="message" rows="4" placeholder="Please enter your message here..." required></textarea><br />
+      <form action="https://formspree.io/f/mblyqlzy" method="POST">
+  <input type="text" name="name" placeholder="Enter your name" required /><br />
+  <input type="email" name="email" placeholder="Enter your email" required /><br />
+  <textarea name="message" rows="4" placeholder="Please enter your message here..." required></textarea><br />
 
-        <u><h4>If student:</h4></u>
-        <label><input type="radio" name="year" value="1st year" /> 1st year</label>
-        <label><input type="radio" name="year" value="2nd year" /> 2nd year</label>
-        <label><input type="radio" name="year" value="3rd year" /> 3rd year</label>
-        <label><input type="radio" name="year" value="4th year" /> 4th year</label><br/>
+  <u><h4>If student:</h4></u>
+  <label><input type="radio" name="year" value="1st year" /> 1st year</label>
+  <label><input type="radio" name="year" value="2nd year" /> 2nd year</label>
+  <label><input type="radio" name="year" value="3rd year" /> 3rd year</label>
+  <label><input type="radio" name="year" value="4th year" /> 4th year</label><br/>
 
-        <input type="text" id="college" name="college" placeholder="Your college name" required /><br />
-        <label for="feedback">Feedback:</label><br />
-        <textarea id="feedback" name="feedback" rows="4" placeholder="Please enter your valuable feedback here..." required></textarea><br />
+  <input type="text" name="college" placeholder="Your college name" required /><br />
+  <label for="feedback">Feedback:</label><br />
+  <textarea name="feedback" rows="4" placeholder="Please enter your valuable feedback here..." required></textarea><br />
 
-        <input type="submit" value="Send" />
-      </form>
+  <!-- ✅ Add hidden field to prevent spam -->
+  <input type="hidden" name="_subject" value="New portfolio contact form submission" />
+  <input type="submit" value="Send" />
+</form>
+
     </section>
   </div>
 
