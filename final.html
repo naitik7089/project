@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio - Naitik Kumar</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1 class="capitalize">My Portfolio</h1>
+      <p class="intro">Hello, I am <strong>Naitik Kumar</strong>, a B.Tech student at IILM University, Greater Noida.</p>
+      <p class="intro">This is my portfolio page where you can find information about me, my skills, and how to contact me.</p>
+    </header>
+
+    <section class="profile-section">
+      <h2>Profile Pic</h2>
+      <a href="https://www.linkedin.com/in/naitik-kumar-2b76a328b/" target="_blank">
+        <img src="profile pic.jpg" alt="Profile Picture" class="profile-pic" />
+      </a>
+    </section>
+
+    <section class="info">
+      <ul>
+        <li><strong>Education:</strong> I am doing a UG in B.Tech. at IILM University, Greater Noida.</li>
+        <li><strong>Skills:</strong> I have good knowledge of C, C++, Python, HTML, CSS, JavaScript, DSA, and problem solving.</li>
+        <li><strong>Hobbies:</strong> I like to play basketball and football and I also like painting.</li>
+        <li><strong>My Favourite Quote:</strong> "The only way to do great work is to love what you do." – Steve Jobs</li>
+        <li><strong>Contact:</strong> You can also contact me at my <a href="https://www.linkedin.com/in/naitik-kumar-2b76a328b/">LinkedIn ID</a>.</li>
+      </ul>
+    </section>
+
+    <hr />
+
+    <section class="contact">
+      <h2>Contact Me</h2>
+      <form action="https://formspree.io/f/your-form-id" method="POST">
+        <input type="text" name="name" placeholder="Enter your name" required /><br />
+        <input type="email" name="email" placeholder="Enter your email" required /><br />
+        <textarea name="message" rows="4" placeholder="Please enter your message here..." required></textarea><br />
+
+        <u><h4>If student:</h4></u>
+        <label><input type="radio" name="year" value="1st year" /> 1st year</label>
+        <label><input type="radio" name="year" value="2nd year" /> 2nd year</label>
+        <label><input type="radio" name="year" value="3rd year" /> 3rd year</label>
+        <label><input type="radio" name="year" value="4th year" /> 4th year</label><br/>
+
+        <input type="text" name="college" placeholder="Your college name" required />
+        <label for="feedback">Feedback:</label><br />
+        <textarea id="feedback" name="feedback" rows="4" placeholder="Please enter your valuable feedback here..." required></textarea><br />
+
+        <input type="submit" value="Send" />
+      </form>
+    </section>
+  </div>
+</body>
+</html>
