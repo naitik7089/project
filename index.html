@@ -6,23 +6,26 @@
   <title>My Portfolio</title>
   <link rel="icon" href="online-resume.png" type="image/png">
   <link rel="stylesheet" href="style.css" />
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet" />
 </head>
 <body>
   <div class="container">
     <header class="hero">
-      <h1 class="capitalize" id="portfolio">My Portfolio</h1>
-      <p class="intro">Hello, I am <strong>Naitik Kumar</strong>, a B.Tech student at IILM University, Greater Noida.</p>
-      <p class="intro">This is my portfolio page where you can find information about me, my skills, and how to contact me.</p>
+      <h1 class="capitalize" id="portfolio" data-aos="fade-down">My Portfolio</h1>
+      <p class="intro" data-aos="fade-up" data-aos-delay="100">Hello, I am <strong>Naitik Kumar</strong>, a B.Tech student at IILM University, Greater Noida.</p>
+      <p class="intro" data-aos="fade-up" data-aos-delay="200">This is my portfolio page where you can find information about me, my skills, and how to contact me.</p>
     </header>
 
-    <section class="profile-section">
+    <section class="profile-section" data-aos="zoom-in" data-aos-delay="300">
       <h2>Profile Pic</h2>
       <a href="https://www.linkedin.com/in/naitik-kumar-2b76a328b/" target="_blank">
         <img src="profile pic.jpg" alt="Profile Picture" class="profile-pic" />
       </a>
     </section>
 
-    <section class="info">
+    <section class="info" data-aos="fade-right" data-aos-delay="400">
       <ul>
         <li><strong>Education:</strong> I am doing a UG in B.Tech. at IILM University, Greater Noida.</li>
         <li><strong>Skills:</strong> I have good knowledge of C, C++, Python, HTML, CSS, JavaScript, DSA, and problem solving.</li>
@@ -33,62 +36,33 @@
       </ul>
     </section>
 
-
     <hr />
 
-    <section class="contact">
-      <h2 class = "contact-heading">Contact Me</h2>
-
-      <!-- ✅ JavaScript-enabled form -->
+    <section class="contact" data-aos="fade-up" data-aos-delay="500">
+      <h2 class="contact-heading">Contact Me</h2>
       <form action="https://formspree.io/f/mblyqlzy" method="POST">
-  <input type="text" name="name" placeholder="Enter your name" required /><br />
-  <input type="email" name="email" placeholder="Enter your email" required /><br />
-  <textarea name="message" rows="4" placeholder="Please enter your message here..." required></textarea><br />
-
-
-  <input type="text" name="college" placeholder="Your college name" required /><br />
-  <label for="feedback">Feedback:</label><br />
-  <textarea name="feedback" rows="4" placeholder="Please enter your valuable feedback here..." required></textarea><br />
-
-  <!-- ✅ Add hidden field to prevent spam -->
-  <input type="hidden" name="_subject" value="New portfolio contact form submission" />
-  <!-- <input class="button-85" id="submit" type="submit" value="SUBMIT" /> -->
-   <button class="button-85" id="submit">
-    <div class="top">SUBMIT</div>
-    <div class="bottom"></div>
-   </button>
-</form>
-
+        <input type="text" name="name" placeholder="Enter your name" required /><br />
+        <input type="email" name="email" placeholder="Enter your email" required /><br />
+        <textarea name="message" rows="4" placeholder="Please enter your message here..." required></textarea><br />
+        <input type="text" name="college" placeholder="Your college name" required /><br />
+        <label for="feedback">Feedback:</label><br />
+        <textarea name="feedback" rows="4" placeholder="Please enter your valuable feedback here..." required></textarea><br />
+        <input type="hidden" name="_subject" value="New portfolio contact form submission" />
+        <button class="button-85" id="submit">
+          <div class="top">SUBMIT</div>
+          <div class="bottom"></div>
+        </button>
+      </form>
     </section>
   </div>
 
-  <!-- ✅ JavaScript added below -->
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
-    function showData(event) {
-      event.preventDefault(); // Stop form from submitting
-
-      // Get values
-      const name = document.getElementById("name").value;
-      const email = document.getElementById("email").value;
-      const message = document.getElementById("message").value;
-      const college = document.getElementById("college").value;
-      const feedback = document.getElementById("feedback").value;
-
-      // Get selected year (radio buttons)
-      const year = document.querySelector('input[name="year"]:checked');
-      const selectedYear = year ? year.value : "Not selected";
-
-      // Show user-entered info
-      alert(
-        `📥 Form Data:\n\n` +
-        `👤 Name: ${name}\n` +
-        `📧 Email: ${email}\n` +
-        `📨 Message: ${message}\n` +
-        `🎓 Year: ${selectedYear}\n` +
-        `🏫 College: ${college}\n` +
-        `🗣️ Feedback: ${feedback}`
-      );
-    }
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
   </script>
 </body>
 </html>
